@@ -111,7 +111,7 @@ Postman can be used to test the API endpoints (I also included `api.postmane_col
    - **Method**: GET
    - **Response**: Returns a list of jobs and their status.
 
-3. **GET /jobs/:jobId**:
+3. **GET /jobs?jobId=1**:
    - **URL**: `http://localhost:3000/jobs?jobId=1`
    - **Method**: GET
    - **Response**: Returns details of the specific job with ID `1`.
@@ -121,7 +121,7 @@ Postman can be used to test the API endpoints (I also included `api.postmane_col
    - **Method**: GET
    - **Response**: Returns all logs.
 
-5. **GET /logs/:logId**:
+5. **GET /logs?logId=1**:
    - **URL**: `http://localhost:3000/logs?logId=1`
    - **Method**: GET
    - **Response**: Returns details of a specific log with ID `1`.
@@ -144,6 +144,7 @@ Postman can be used to test the API endpoints (I also included `api.postmane_col
    * Install XAMPP application for the phpmyadmin virtual server.
    * Launch XAMPP and start Apache and MySQL.
    * In the browser, navigate to `localhost/phpmyadmin`. Then create the database `db_apao_technical_assessment`.
+   * Import the `db_apao_technical_assessment.sql` file under `src/db` folder to import the tables.
 
 4. **Set Environment Variables**:
 
