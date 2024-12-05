@@ -1,0 +1,662 @@
+{
+	"info": {
+		"_postman_id": "001566a3-dbec-466e-90e9-544e1d0ee257",
+		"name": "APAO TECHNICAL ASSESSMENT - API DOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25558574"
+	},
+	"item": [
+		{
+			"name": "submit a job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://angular.dev/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "missing parameter",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hi\": \"hello\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-fotgA6xP60XMcjPEzpO2AzR/xAo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Dec 2024 14:45:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Missing parameter(s): url\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "invalid url",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"invalid-url input\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-5Ziq596iKH7oGpWyP4EJgHOBcBQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Dec 2024 14:48:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Invalid URL\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://angular.dev/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "836"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"344-T5WN0BtLs/9REzNeK9ImtoNJ88E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 06:25:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"job_id\": 1,\n        \"url\": \"https://angular.dev/\",\n        \"status\": \"completed\",\n        \"summary\": \"This text is an advertisement for Angular v19, highlighting its benefits and features. \\n\\n**Key takeaways:**\\n\\n* **Angular v19 is released.** The text invites readers to learn about the latest version.\\n* **Scalability:** Angular is suitable for both small and large projects.\\n* **Large Community:** Millions of developers use Angular, providing support and resources.\\n* **Accessibility and Inclusivity:** Angular includes built-in features to ensure apps are accessible and usable by everyone.\\n* **Google Support:** Angular is developed and backed by Google. \\n\\nThe text also provides links to resources like documentation, tutorials, community forums, and social media channels for further exploration of Angular.\"\n    }\n}"
+				},
+				{
+					"name": "failure 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://jamesclear.com/saying-no\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-0IqmCsHUPmSRd9qbW0ZEZw7tkzk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:01:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 500,\n    \"message\": \"[Internal Server Error]: Error: The text might too long to summarize.\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "get jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "471"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d7-ELLMUBcOFY1qe0dLtZe670Aypvw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:05:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Job(s) retrieved\",\n    \"data\": {\n        \"jobs\": [\n            {\n                \"job_id\": 3,\n                \"url\": \"https://angular.dev/\",\n                \"status\": \"completed\",\n                \"summary\": \"This is not an article, but a snippet from the Angular website. It highlights the new release of Angular v19, emphasizing its scalability, popularity, and features like hydration, internationalization, security, and accessibility support. It also provides links to various resources for learning and engaging with the Angular community.\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get job details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/jobs?jobId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "jobId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs?jobId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "471"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d7-ELLMUBcOFY1qe0dLtZe670Aypvw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:06:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Job(s) retrieved\",\n    \"data\": {\n        \"jobs\": [\n            {\n                \"job_id\": 3,\n                \"url\": \"https://angular.dev/\",\n                \"status\": \"completed\",\n                \"summary\": \"This is not an article, but a snippet from the Angular website. It highlights the new release of Angular v19, emphasizing its scalability, popularity, and features like hydration, internationalization, security, and accessibility support. It also provides links to various resources for learning and engaging with the Angular community.\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "no exist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs?jobId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-QlAsmS/k54mEqGI8b7VryVyhxLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:07:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"0 job(s) retrieved\",\n    \"data\": {\n        \"jobs\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "947"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b3-VMH1g9bRr8AqsLohpXejsKUW5kk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:23:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"5 logs(s) retrieved\",\n    \"data\": {\n        \"logs\": [\n            {\n                \"log_id\": 1,\n                \"type\": \"error\",\n                \"message\": \"[Job Failed] LLM failure occured. the text might too long to summarize.\",\n                \"job_id\": 1,\n                \"url\": \"https://jamesclear.com/saying-no\",\n                \"status\": \"pending\"\n            },\n            {\n                \"log_id\": 2,\n                \"type\": \"error\",\n                \"message\": \"[Job Failed] LLM failure occured. the text might too long to summarize.\",\n                \"job_id\": 2,\n                \"url\": \"https://jamesclear.com/saying-no\",\n                \"status\": \"failed\"\n            },\n            {\n                \"log_id\": 3,\n                \"type\": \"success\",\n                \"message\": \"[Job Succeed] Successfully generated URL textual content summary.\",\n                \"job_id\": 3,\n                \"url\": \"https://angular.dev/\",\n                \"status\": \"completed\"\n            },\n            {\n                \"log_id\": 4,\n                \"type\": \"error\",\n                \"message\": \"[Job Failed] LLM failure occured. the text might too long to summarize.\",\n                \"job_id\": 4,\n                \"url\": \"https://jamesclear.com/saying-no\",\n                \"status\": \"failed\"\n            },\n            {\n                \"log_id\": 5,\n                \"type\": \"success\",\n                \"message\": \"[Job Succeed] Successfully generated URL textual content summary.\",\n                \"job_id\": 7,\n                \"url\": \"https://angular.dev/\",\n                \"status\": \"completed\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get log details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logs?logId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "logId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/logs?logId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "logId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-wXUa8M+wLz4xnhjb8t8kyZA2LKI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 07:24:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"1 logs(s) retrieved\",\n    \"data\": {\n        \"logs\": [\n            {\n                \"log_id\": 4,\n                \"type\": \"error\",\n                \"message\": \"[Job Failed] LLM failure occured. the text might too long to summarize.\",\n                \"job_id\": 4,\n                \"url\": \"https://jamesclear.com/saying-no\",\n                \"status\": \"failed\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
