@@ -220,7 +220,7 @@
 					"body": "{\n    \"code\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"job_id\": 1,\n        \"url\": \"https://angular.dev/\",\n        \"status\": \"completed\",\n        \"summary\": \"This text is an advertisement for Angular v19, highlighting its benefits and features. \\n\\n**Key takeaways:**\\n\\n* **Angular v19 is released.** The text invites readers to learn about the latest version.\\n* **Scalability:** Angular is suitable for both small and large projects.\\n* **Large Community:** Millions of developers use Angular, providing support and resources.\\n* **Accessibility and Inclusivity:** Angular includes built-in features to ensure apps are accessible and usable by everyone.\\n* **Google Support:** Angular is developed and backed by Google. \\n\\nThe text also provides links to resources like documentation, tutorials, community forums, and social media channels for further exploration of Angular.\"\n    }\n}"
 				},
 				{
-					"name": "failure 1",
+					"name": "summarize failed",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -280,6 +280,68 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"code\": 500,\n    \"message\": \"[Internal Server Error]: Error: The text might too long to summarize.\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "url not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://xyzahj.com/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"50-FnXJG+1AnJCTHRBbH6iBVv8xThk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Dec 2024 08:57:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 500,\n    \"message\": \"[Internal Server Error]: Error: URL Not Found\",\n    \"data\": {}\n}"
 				}
 			]
 		},

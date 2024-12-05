@@ -32,7 +32,27 @@ mainRouter.post("/job", async (req, res) => {
       .then(async (job_id) => {
         // main process
         //await processScraping(url);
-        const content = await fetchPageContent(url);
+        const scrapingResult = await fetchPageContent(url);
+
+        if(scrapingResult.status === "error") {
+          // insert logs to database
+          insertLogs(job_id, '[Job Failed] Url not found.', 'error')
+            .then(() => {})
+            .catch(() => {
+              throw new Error("Failed to insert new log");
+            });
+
+          // update job status into fialed
+          updateJob(job_id, 'failed')
+            .then(() => {})
+            .catch(() => {
+              throw new Error("Failed to update job details");
+          });
+          throw new Error(`URL Not Found`);
+        }
+
+        const { content } = scrapingResult;
+
         const summary = await summarizeText(content);
 
         if(summary == null) {
